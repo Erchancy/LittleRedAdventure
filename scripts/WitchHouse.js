@@ -8,7 +8,7 @@ export const WitchHouse = () => {
     Neatly folded by the entrance are some children's clothes. An odd place to keep them.
     Nevermind that now, you can smell something delicious.
     Following the scent into the kitchen you spy a large cauldron, its conttents boiling.
-    "Oh lucky day!" says an old woman as she comes out from her pantry."Tell me child, are you hungry"
+    "Oh lucky day!" says an old woman as she comes out from her pantry."Tell me child, are you hungry?"
     "Starving," you reply matter of factly.
     "Then stay for dinner won't you?"
     If there was ever anything you learned from your parents it was to take free food when offered, "Of course!" you exclaim
