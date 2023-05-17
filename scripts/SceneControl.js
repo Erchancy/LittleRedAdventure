@@ -8,19 +8,19 @@ import { WitchHouse } from "./WitchHouse.js"
 import { Store } from "./Store.js"
 
 export const NorthButton = () => {
-  return `<div><button id='north'>North</button></div>`
+  return `<div><button id='north' class="button">North</button></div>`
 }
 
 export const EastButton = () => {
-  return `<div><button id='east'>East</button></div>`
+  return `<div><button id='east' class="button">East</button></div>`
 }
 
 export const SouthButton = () => {
-  return `<div><button id='south'>South</button></div>`
+  return `<div><button id='south' class="button">South</button></div>`
 }
 
 export const WestButton = () => {
-  return `<div><button id='west'>West</button></div>`
+  return `<div><button id='west' class="button">West</button></div>`
 }
 
 document.addEventListener("click", (clickEvent) => {

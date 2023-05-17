@@ -11,13 +11,16 @@ export const Store = () => {
     const southButton = SouthButton()
     const westButton = WestButton()
         
+    const Buttons = `<div class="button-container">
+    ${northButton}
+    <div class="button-center">${eastButton}${westButton}</div>
+    ${southButton}</div>`
+    
+
     const composedHTML = `
     ${descriptionHTML}
-    <div>So...which way would you like to go?</div>
-    ${northButton}
-    ${eastButton}
-    ${southButton}
-    ${westButton}
+    <div class="choose">So...which way would you like to go?</div>
+    ${Buttons}
     `
     
         container.innerHTML = composedHTML
