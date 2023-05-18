@@ -1,4 +1,4 @@
-import { EastButton, NorthButton, SouthButton, WestButton } from "./SceneControl.js"
+import { EastButton, NorthButton, ResetButton, SouthButton, WestButton } from "./SceneControl.js"
 
 export const DarkForest = () => {
 
@@ -15,11 +15,12 @@ export const DarkForest = () => {
     const eastButton = EastButton()
     const southButton = SouthButton()
     const westButton = WestButton()
+    const resetButton = ResetButton()
         
     
     const Buttons = `<div class="button-container">
     ${northButton}
-    <div class="button-center">${eastButton}${westButton}</div>
+    <div class="button-center">${eastButton}${resetButton}${westButton}</div>
     ${southButton}</div>`
     
 

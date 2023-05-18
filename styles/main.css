@@ -19,7 +19,7 @@
   justify-content: center;
   align-items: center;
   white-space: pre-line;
-  padding: 10px;
+  padding: 20px;
   background-color: aliceblue;
 }
 
@@ -32,7 +32,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px 0;
+  justify-content: space-around;
+  margin: 30px 0;
+  height: 200px
 }
 
 .button {
@@ -65,8 +67,8 @@
 .button-center {
     display: flex;
     flex-direction: row-reverse;
+    justify-content: space-between;
 }
-
 
 .button:hover,
 .button:active {
@@ -81,6 +83,7 @@
 
 #north {
     align-self: flex-start;
+    margin: auto
 }
   
 #east {
@@ -89,8 +92,16 @@
   
 #west {
     margin-right: 50px;
+    align-self: flex-start;
 }
 
 #south {
     align-self: flex-end;
+    margin: auto;
 }
+
+.hidden-button {
+    opacity: 0;
+    pointer-events: none;
+}
+  

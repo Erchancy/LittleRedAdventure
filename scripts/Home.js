@@ -1,3 +1,5 @@
+import { ResetButton } from "./SceneControl.js"
+
 export const Home = () => {
 
     const descriptionHTML = `
@@ -9,9 +11,11 @@ export const Home = () => {
     Surely not
     <div class="choose">BAD END</div></div>
     `
+
+    const resetButton = ResetButton()
         
     const composedHTML = `
-    ${descriptionHTML}
+    ${descriptionHTML}${resetButton}
     `
     
     container.innerHTML = composedHTML

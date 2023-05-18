@@ -1,10 +1,16 @@
-import { EastButton, NorthButton, SouthButton, WestButton } from "./SceneControl.js"
+import { EastButton, NorthButton, ResetButton, SouthButton, WestButton } from "./SceneControl.js"
 
-let descriptionHTML = `<div class="description">You are Little Red Riding Hood and you've been tasked with taking some food to your sickly grandmother.
-You were given some directions: Across the river and through the woods. Short and sweet. You're a good kid, surely you can follow the rules.
-Currently you are on the well traveled path from your home. The river to your left babbles peaceably, a bridge across in view.
+let descriptionHTML = `
+<div class="description">You are Little Red Riding Hood
+You've been tasked by your parents with taking some food and medicine to your sickly grandmother.
+You were given some directions: Across the river and through the woods.
+Short and sweet.
+You're a good kid, surely you can follow the rules.
+Currently you are on the well traveled path north from your home. 
+The river to your left babbles peaceably, a bridge across it in view. 
 Further forward you can see the start of the woods.
-To your right are beautiful plains, and come to think of it, you've never gone that way have you?</div>`
+To your right are beautiful plains and, come to think of it, you've never gone that way have you?</div>
+`
 
 
 export const Start = () => {
@@ -13,11 +19,12 @@ export const Start = () => {
     const eastButton = EastButton()
     const southButton = SouthButton()
     const westButton = WestButton()
+    const resetButton = ResetButton()
 
     const Buttons = `<div class="button-container">
-    ${northButton}
-    <div class="button-center">${eastButton}${westButton}</div>
-    ${southButton}</div>`
+    <div id='north'>${northButton}</div>
+    <div class="button-center">${eastButton}${resetButton}${westButton}</div>
+    <div id='south'>${southButton}</div></div>`
     
 
     const composedHTML = `

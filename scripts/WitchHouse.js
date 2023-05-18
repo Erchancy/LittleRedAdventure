@@ -1,3 +1,5 @@
+import { EastButton, NorthButton, ResetButton, SouthButton, WestButton } from "./SceneControl.js"
+
 export const WitchHouse = () => {
 
     const descriptionHTML = `
@@ -14,9 +16,19 @@ export const WitchHouse = () => {
     If there was ever anything you learned from your parents it was to take free food when offered, "Of course!" you exclaim
     <div class="choose">BAD END</div></div>
     `
+        const northButton = NorthButton()
+        const eastButton = EastButton()
+        const southButton = SouthButton()
+        const westButton = WestButton()
+        const resetButton = ResetButton()
+
+        const Buttons = `<div class="button-container">
+        <div id='north' class="hidden-button">${northButton}</div>
+        <div class="button-center hidden-button">${eastButton}</div>${resetButton}<div class="hidden-button">${westButton}</div></div>
+        <div id='south'class="hidden-button">${southButton}</div></div>`
 
         const composedHTML = `
-        ${descriptionHTML}
+        ${descriptionHTML}${Buttons}
         `
     
         container.innerHTML = composedHTML

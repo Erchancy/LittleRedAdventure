@@ -3,9 +3,12 @@
 import { DarkForest } from "./DarkForest.js"
 import { Home } from "./Home.js"
 import { MotherGoat } from "./MotherGoat.js"
-import { ShepherdBoy } from "./ShepherdBoy.js"
+import { ShepherdBoy } from "./Plains.js"
 import { WitchHouse } from "./WitchHouse.js"
 import { Store } from "./Store.js"
+import { Start } from "./Start.js"
+import { Start2 } from "./Start2.js"
+import { Village } from "./Village.js"
 
 export const NorthButton = () => {
   return `<div><button id='north' class="button">North</button></div>`
@@ -21,6 +24,10 @@ export const SouthButton = () => {
 
 export const WestButton = () => {
   return `<div><button id='west' class="button">West</button></div>`
+}
+
+export const ResetButton = () => {
+  return `<div><button id='reset' class="button">Reset</button></div>`
 }
 
 document.addEventListener("click", (clickEvent) => {
@@ -42,6 +49,10 @@ document.addEventListener("click", (clickEvent) => {
       break;
     case "west":
       customEvent = new CustomEvent("westClick")
+      document.dispatchEvent(customEvent)
+      break;
+    case "reset":
+      customEvent = new CustomEvent("resetClick")
       document.dispatchEvent(customEvent)
       break;
   }
@@ -67,11 +78,14 @@ document.addEventListener("eastClick", () => {
   switch (currentScene) {
     case "initial":
       ShepherdBoy()
-      currentScene = "scene3"
+      currentScene = "scene2"
       break;
     case "scene1":
       WitchHouse()
       break;
+    case "scene5":
+      Start2()
+      currentScene = "initial"
     // Handle other cases as needed
   }
 })
@@ -80,7 +94,9 @@ document.addEventListener("southClick", () => {
   switch (currentScene) {
     case "initial":
       Home()
-      currentScene = "scene4"
+      break;
+    case "scene2":
+      Village()
       break;
     case "scene5":
       Store()
@@ -95,8 +111,17 @@ document.addEventListener("westClick", () => {
       MotherGoat()
       currentScene = "scene5"
       break
+    case "scene2":
+      Start2()
+      currentScene = "initial"
+
     // Handle other cases as needed
   }
+})
+
+document.addEventListener("resetClick", () => {
+      Start()
+      currentScene = "initial"
 })
 
 
