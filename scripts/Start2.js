@@ -29,11 +29,10 @@ export const Start2 = () => {
         `
     }
     
-
-    const northButton = NorthButton()
-    const eastButton = EastButton()
-    const southButton = SouthButton()
-    const westButton = WestButton()
+    const northButton = NorthButton("North")
+    const eastButton = EastButton("East")
+    const southButton = SouthButton("South")
+    const westButton = WestButton("West")
     const resetButton = ResetButton()
 
     let Buttons = `<div class="button-container">

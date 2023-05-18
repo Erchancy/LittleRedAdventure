@@ -15,10 +15,10 @@ To your right are beautiful plains and, come to think of it, you've never gone t
 
 export const Start = () => {
 
-    const northButton = NorthButton()
-    const eastButton = EastButton()
-    const southButton = SouthButton()
-    const westButton = WestButton()
+    const northButton = NorthButton("North")
+    const eastButton = EastButton("East")
+    const southButton = SouthButton("South")
+    const westButton = WestButton("West")
     const resetButton = ResetButton()
 
     const Buttons = `<div class="button-container">

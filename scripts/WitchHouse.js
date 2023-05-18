@@ -16,11 +16,11 @@ export const WitchHouse = () => {
     If there was ever anything you learned from your parents it was to take free food when offered, "Of course!" you exclaim
     <div class="choose">BAD END</div></div>
     `
-        const northButton = NorthButton()
-        const eastButton = EastButton()
-        const southButton = SouthButton()
-        const westButton = WestButton()
-        const resetButton = ResetButton()
+    const northButton = NorthButton("North")
+    const eastButton = EastButton("East")
+    const southButton = SouthButton("South")
+    const westButton = WestButton("West")
+    const resetButton = ResetButton()
 
         const Buttons = `<div class="button-container">
         <div id='north' class="hidden-button">${northButton}</div>

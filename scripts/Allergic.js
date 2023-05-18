@@ -1,19 +1,29 @@
 import { EastButton, NorthButton, ResetButton, SouthButton, WestButton } from "./SceneControl.js"
 
-export const Village = () => {
+export const Allergic = () => {
 
     const descriptionHTML = `
-    <div class="description">Pranking the villagers sounds like a grand time.
-    The two of you run down to the village, making a race out it
-    "Wolf! Wolf!" the boy cries as you both come into town, "There's a wolf on the loose!"
-    "A big bad wolf!" you add, running down the street
-    But the town is oddly silent
-    Oddly empty
-    Curious stains on buildings
-    "I'm aware," a gruff voice announces from behind the two of you.
-    You turn to see a large black haired wolf standing as if he were a man. His yellowed teeth spread in a grin
-    "He's me," the wolf says before attacking the shepherd boy.
-    You run for dear life but trip and fall over something. You can hear the wolf coming for you
+    <div class="description">Grandma really liked yellow flowers...you think
+    No reason to question yourself now, you can always get some of the other flowers too
+    You start picking some of the dainty looking yellow flowers
+    Taking one up to your face you take a deep breath
+    It smells really nice
+    Grandma will love these, even if they aren't her favorite
+    After you gather a bouquet of them, you get ready to resume your journey
+    ...
+    That's odd
+    You feel kinda itchy
+    No, really itchy
+    Like really really itchy
+    You start to cough, dropping the pretty flowers
+    They're soon followed by your body as your knees buckle from the hacking and wheezing
+    You are surrounded by an alluring yellow sea
+    You struggle to breath
+    Your vision blurs
+    All you see is yellow
+    Yellow
+    Yellow
+    Yellow
     <div class="choose">BAD END</div></div>
     `
 

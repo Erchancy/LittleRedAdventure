@@ -18,10 +18,10 @@ export const ShepherdBoy = () => {
     But you could also head back to the path and do your duty as a caring granddaughter</div>
     `
 
-    const northButton = NorthButton()
-    const eastButton = EastButton()
-    const southButton = SouthButton()
-    const westButton = WestButton()
+    const northButton = NorthButton("North")
+    const eastButton = EastButton("East")
+    const southButton = SouthButton("South")
+    const westButton = WestButton("West")
     const resetButton = ResetButton()
         
     const Buttons = `<div class="button-container">

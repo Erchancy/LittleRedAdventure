@@ -1,4 +1,4 @@
-import { ResetButton } from "./SceneControl.js"
+import { EastButton, NorthButton, ResetButton, SouthButton, WestButton } from "./SceneControl.js"
 
 export const Home = () => {
 
@@ -12,13 +12,23 @@ export const Home = () => {
     <div class="choose">BAD END</div></div>
     `
 
+    const northButton = NorthButton("North")
+    const eastButton = EastButton("East")
+    const southButton = SouthButton("South")
+    const westButton = WestButton("West")
     const resetButton = ResetButton()
-        
+
+    const Buttons = `<div class="button-container">
+    <div id='north' class="hidden-button">${northButton}</div>
+    <div class="button-center hidden-button">${eastButton}</div>${resetButton}<div class="hidden-button">${westButton}</div></div>
+    <div id='south'class="hidden-button">${southButton}</div></div>`
+
+
     const composedHTML = `
-    ${descriptionHTML}${resetButton}
-    `
+        ${descriptionHTML}${Buttons}
+        `
     
-    container.innerHTML = composedHTML
+        container.innerHTML = composedHTML
 
     const customEvent = new CustomEvent("sceneChanged")
     document.dispatchEvent(customEvent)

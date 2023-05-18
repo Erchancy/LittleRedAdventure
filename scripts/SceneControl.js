@@ -9,21 +9,27 @@ import { Store } from "./Store.js"
 import { Start } from "./Start.js"
 import { Start2 } from "./Start2.js"
 import { Village } from "./Village.js"
+import { Alraune } from "./Alraune.js"
+import { BadWolf } from "./BadWolf.js"
+import { PickFlowers } from "./PickFlowers.js"
+import { Allergic } from "./Allergic.js"
+import { BlueFlowers } from "./BlueFlowers.js"
+import { Grandma } from "./Grandma.js"
 
-export const NorthButton = () => {
-  return `<div><button id='north' class="button">North</button></div>`
+export const NorthButton = (label) => {
+  return `<div><button id='north' class="button">${label}</button></div>`
 }
 
-export const EastButton = () => {
-  return `<div><button id='east' class="button">East</button></div>`
+export const EastButton = (label) => {
+  return `<div><button id='east' class="button">${label}</button></div>`
 }
 
-export const SouthButton = () => {
-  return `<div><button id='south' class="button">South</button></div>`
+export const SouthButton = (label) => {
+  return `<div><button id='south' class="button">${label}</button></div>`
 }
 
-export const WestButton = () => {
-  return `<div><button id='west' class="button">West</button></div>`
+export const WestButton = (label) => {
+  return `<div><button id='west' class="button">${label}</button></div>`
 }
 
 export const ResetButton = () => {
@@ -66,10 +72,25 @@ document.addEventListener("northClick", () => {
     case "initial":
       DarkForest()
       currentScene = "scene1"
-      break
+      break;
     case "scene1":
-      // Transition logic from scene1 to scene2
-      break
+      Alraune()
+      break;
+    case "scene5":
+      BadWolf()
+      currentScene = "scene6"
+      break;
+    case "scene6":
+      PickFlowers()
+      currentScene = "scene7"
+      break;
+    case "scene7":
+      BlueFlowers()
+      currentScene = "scene8"
+      break;
+    case "scene8":
+      Grandma()
+      break;
     // Handle other cases as needed
   }
 })
@@ -86,6 +107,10 @@ document.addEventListener("eastClick", () => {
     case "scene5":
       Start2()
       currentScene = "initial"
+      break;
+    case "scene7":
+      Alraune()
+      break;
     // Handle other cases as needed
   }
 })
@@ -94,6 +119,10 @@ document.addEventListener("southClick", () => {
   switch (currentScene) {
     case "initial":
       Home()
+      break;
+    case "scene1":
+      Start2()
+      currentScene = "initial"
       break;
     case "scene2":
       Village()
@@ -110,11 +139,14 @@ document.addEventListener("westClick", () => {
     case "initial":
       MotherGoat()
       currentScene = "scene5"
-      break
+      break;
     case "scene2":
       Start2()
       currentScene = "initial"
-
+      break;
+    case "scene7":
+      Allergic()
+      break;
     // Handle other cases as needed
   }
 })

@@ -1,19 +1,20 @@
 import { EastButton, NorthButton, ResetButton, SouthButton, WestButton } from "./SceneControl.js"
 
-export const Village = () => {
+export const Alraune = () => {
 
     const descriptionHTML = `
-    <div class="description">Pranking the villagers sounds like a grand time.
-    The two of you run down to the village, making a race out it
-    "Wolf! Wolf!" the boy cries as you both come into town, "There's a wolf on the loose!"
-    "A big bad wolf!" you add, running down the street
-    But the town is oddly silent
-    Oddly empty
-    Curious stains on buildings
-    "I'm aware," a gruff voice announces from behind the two of you.
-    You turn to see a large black haired wolf standing as if he were a man. His yellowed teeth spread in a grin
-    "He's me," the wolf says before attacking the shepherd boy.
-    You run for dear life but trip and fall over something. You can hear the wolf coming for you
+    <div class="description">You follow the pretty red flowers deeper into the forest
+    A sickly sweet scent creeps into your nose as you travel onward
+    The forest becomes a veritable garden as flora overtakes your surroundings
+    In the center of the garden, rays of light beaming through the trees highlight a large rose
+    You approach it
+    It's taller than you are!
+    You can't resist touching this beautiful flower
+    It suddenly starts to bloom. Unfurling from within is a woman with skin as as green as a stalk. Her hair and lips vibrant like the plant she resides in
+    Sleepily she rubs her eyes and yawns. "Hmm, This is no place for children you know."
+    You feel vines and roots wrap around your feet
+    You struggle to get free but the vines continue up your body until you are fully constricted
+    "Cute little girls make for good fertilizer."
     <div class="choose">BAD END</div></div>
     `
 
