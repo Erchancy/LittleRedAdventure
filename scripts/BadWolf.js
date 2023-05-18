@@ -24,7 +24,7 @@ export const BadWolf = () => {
 
     const northButton = NorthButton("North")
     const eastButton = EastButton("East")
-    const southButton = SouthButton("South")
+    const southButton = SouthButton("Coming Soon")
     const westButton = WestButton("West")
     const resetButton = ResetButton()
         
