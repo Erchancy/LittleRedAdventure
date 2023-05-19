@@ -6,8 +6,8 @@ export const RunAway = () => {
     <div class="description">You decide, quite reasonably you think, to go home
     Grandma may needs this medicine and food but she'll live a day without won't she?
     And coming to think of it, why did your parents send you to go through the woods all alone?
-    This isn't the type of thig a child should be doing.
-    Making your way out of the forest, you can see the birdge again
+    This isn't the type of thing a child should be doing.
+    Making your way out of the forest, you can see the bridge again
     Mamma goat is nowhere to be seen
     Made her way to the store you hope</div>
     `

@@ -1,12 +1,12 @@
 import { EastButton, NorthButton, ResetButton, SouthButton, WestButton } from "./SceneControl.js"
 
 let descriptionHTML = `
-<div class="description">As you walk back down the path you can see you home appear in the horizon
+<div class="description">As you walk back down the path you can see your home appear in the horizon
 It's a quaint little thing
 The yellow painted wood panels bleached almost entirely white from the sun
 You approach the front door, arm raised ready to knock on the door
 You can hear yelling
-Suddenly the conviction iin your body dissipates
+Suddenly the conviction in your body dissipates
 You stand there for a few minutes listening to the yelling
 It's too muffled to parse out, or maybe you're just used to tuning it out
 You're startled by the door opening
@@ -23,7 +23,7 @@ Your mother and father both came outside while you were playing and told you to 
 How could they not remeber that?
 It hasn't been that long
 As you continue to mull the thoughts over in your head, you slowly drift to sleep
-<div class="choose">END?</div></div>
+<div class="choose">GOOD END?</div></div>
 `
 
 
