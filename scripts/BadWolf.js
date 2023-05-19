@@ -9,7 +9,7 @@ export const BadWolf = () => {
     It was still light out when you entered and yet now it seems so dark.
     You are startled by a loud growling
     Looking around you see a large black wolf circling you
-    "What have we here?" the beast asks "Didn't your parents ever tell you play in the forest?"
+    "What have we here?" the beast asks "Didn't your parents ever tell you not to play in the forest?"
     Gulping you reply, "I'm on my way to my grandmother's house, she's sick."
     "Is that right?" the wolf says, his interest seemingly peaked "And she lives in that cabin just outside the forest does she?"
     Unable to summon the courage to answer him again you just nod your head
@@ -24,7 +24,7 @@ export const BadWolf = () => {
 
     const northButton = NorthButton("North")
     const eastButton = EastButton("East")
-    const southButton = SouthButton("Coming Soon")
+    const southButton = SouthButton("South")
     const westButton = WestButton("West")
     const resetButton = ResetButton()
         
