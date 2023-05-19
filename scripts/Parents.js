@@ -23,7 +23,7 @@ Your mother and father both came outside while you were playing and told you to 
 How could they not remeber that?
 It hasn't been that long
 As you continue to mull the thoughts over in your head, you slowly drift to sleep
-<div class="choose">END</div></div>
+<div class="choose">END?</div></div>
 `
 
 
