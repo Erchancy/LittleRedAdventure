@@ -1,4 +1,4 @@
-import { EastButton, NorthButton, ResetButton, SouthButton, WestButton } from "./SceneControl.js"
+import { buttonLabelAssignment } from "./Buttons.js"
 
 let sceneCounter = 1
 
@@ -29,24 +29,11 @@ export const Start2 = () => {
         `
     }
     
-    const northButton = NorthButton("North")
-    const eastButton = EastButton("East")
-    const southButton = SouthButton("South")
-    const westButton = WestButton("West")
-    const resetButton = ResetButton()
-
-    let Buttons = `<div class="button-container">
-    <div id='north'>${northButton}</div>
-    <div class="button-center">${eastButton}${resetButton}${westButton}</div>
-    <div id='south'>${southButton}</div></div>`
+    const Buttons = buttonLabelAssignment()
     
     let composedHTML = ""
     
     if (sceneCounter >= 4) {
-        Buttons = `<div class="button-container">
-        <div id='north' class="hidden-button">${northButton}</div>
-        <div class="button-center"><div class="hidden-button">${eastButton}</div>${resetButton}<div class="hidden-button">${westButton}</div></div>
-        <div id='south'class="hidden-button">${southButton}</div></div>`
         composedHTML = `${descriptionHTML}${Buttons}`
     } else {
         composedHTML = `
@@ -57,6 +44,19 @@ export const Start2 = () => {
     }
 
     container.innerHTML = composedHTML
+
+    if (sceneCounter >= 4) {
+        const northButton = document.getElementById("north")
+        northButton.classList.add("hidden")
+        const eastButton = document.getElementById("east")
+        eastButton.classList.add("hidden")
+        const southButton = document.getElementById("south")
+        southButton.classList.add("hidden")
+        const westButton = document.getElementById("west")
+        westButton.classList.add("hidden")
+        const inventoryButton = document.getElementById("inventory")
+        inventoryButton.classList.add("hidden")
+    }
 
     const customEvent = new CustomEvent("repeatScene")
     document.dispatchEvent(customEvent)

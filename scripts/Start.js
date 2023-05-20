@@ -1,4 +1,4 @@
-import { EastButton, NorthButton, ResetButton, SouthButton, WestButton } from "./SceneControl.js"
+import { buttonLabelAssignment } from "./Buttons.js"
 
 let descriptionHTML = `
 <div class="description">You are Little Red Riding Hood
@@ -15,16 +15,7 @@ To your right are beautiful plains and, come to think of it, you've never gone t
 
 export const Start = () => {
 
-    const northButton = NorthButton("North")
-    const eastButton = EastButton("East")
-    const southButton = SouthButton("South")
-    const westButton = WestButton("West")
-    const resetButton = ResetButton()
-
-    const Buttons = `<div class="button-container">
-    <div id='north'>${northButton}</div>
-    <div class="button-center">${eastButton}${resetButton}${westButton}</div>
-    <div id='south'>${southButton}</div></div>`
+const Buttons = buttonLabelAssignment()
     
 
     const composedHTML = `

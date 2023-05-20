@@ -1,4 +1,4 @@
-import { EastButton, NorthButton, ResetButton, SouthButton, WestButton } from "./SceneControl.js"
+import { buttonLabelAssignment } from "./Buttons.js"
 
 export const DarkForest = () => {
 
@@ -12,17 +12,7 @@ export const DarkForest = () => {
     Then again, the forest is pretty scary, you could always turn back.</div>
     `
 
-    const northButton = NorthButton("North")
-    const eastButton = EastButton("East")
-    const southButton = SouthButton("South")
-    const westButton = WestButton("West")
-    const resetButton = ResetButton()
-        
-    
-    const Buttons = `<div class="button-container">
-    ${northButton}
-    <div class="button-center">${eastButton}${resetButton}<div class="hidden-button"${westButton}</div></div>
-    ${southButton}</div>`
+    const Buttons = buttonLabelAssignment()
     
 
     const composedHTML = `
@@ -31,7 +21,10 @@ export const DarkForest = () => {
     ${Buttons}
     `
     
-        container.innerHTML = composedHTML
+    container.innerHTML = composedHTML
+
+    const westButton = document.getElementById("west")
+    westButton.classList.add("hidden")
 
 
     const customEvent = new CustomEvent("sceneChanged")

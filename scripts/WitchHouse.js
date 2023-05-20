@@ -1,4 +1,4 @@
-import { EastButton, NorthButton, ResetButton, SouthButton, WestButton } from "./SceneControl.js"
+import { buttonLabelAssignment } from "./Buttons.js"
 
 export const WitchHouse = () => {
 
@@ -16,23 +16,24 @@ export const WitchHouse = () => {
     If there was ever anything you learned from your parents it was to take free food when offered, "Of course!" you exclaim
     <div class="choose">BAD END</div></div>
     `
-    const northButton = NorthButton("North")
-    const eastButton = EastButton("East")
-    const southButton = SouthButton("South")
-    const westButton = WestButton("West")
-    const resetButton = ResetButton()
+    const Buttons = buttonLabelAssignment()
 
-        const Buttons = `<div class="button-container">
-        <div id='north' class="hidden-button">${northButton}</div>
-        <div class="button-center hidden-button">${eastButton}</div>${resetButton}<div class="hidden-button">${westButton}</div></div>
-        <div id='south'class="hidden-button">${southButton}</div></div>`
-
-        const composedHTML = `
-        ${descriptionHTML}${Buttons}
-        `
+    const composedHTML = `
+    ${descriptionHTML}${Buttons}
+    `
     
-        container.innerHTML = composedHTML
+    container.innerHTML = composedHTML
 
+    const northButton = document.getElementById("north")
+    northButton.classList.add("hidden")
+    const eastButton = document.getElementById("east")
+    eastButton.classList.add("hidden")
+    const southButton = document.getElementById("south")
+    southButton.classList.add("hidden")
+    const westButton = document.getElementById("west")
+    westButton.classList.add("hidden")
+    const inventoryButton = document.getElementById("inventory")
+    inventoryButton.classList.add("hidden")
 
     const customEvent = new CustomEvent("sceneChanged")
     document.dispatchEvent(customEvent)

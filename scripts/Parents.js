@@ -1,4 +1,4 @@
-import { EastButton, NorthButton, ResetButton, SouthButton, WestButton } from "./SceneControl.js"
+import { buttonLabelAssignment } from "./Buttons.js"
 
 let descriptionHTML = `
 <div class="description">As you walk back down the path you can see your home appear in the horizon
@@ -29,16 +29,7 @@ As you continue to mull the thoughts over in your head, you slowly drift to slee
 
 export const Parents = () => {
 
-    const northButton = NorthButton("North")
-    const eastButton = EastButton("East")
-    const southButton = SouthButton("Confront Your Parents")
-    const westButton = WestButton("West")
-    const resetButton = ResetButton()
-
-    const Buttons = `<div class="button-container">
-    <div id='north'class="hidden-button">${northButton}</div>
-    <div class="button-center"><div id='east'class="hidden-button">${eastButton}</div>${resetButton}<div class="hidden-button">${westButton}</div></div>
-    <div id='south' class="hidden-button">${southButton}</div></div>`
+    const Buttons = buttonLabelAssignment()
     
 
     const composedHTML = `
@@ -47,6 +38,17 @@ export const Parents = () => {
     `
 
     container.innerHTML = composedHTML
+
+    const northButton = document.getElementById("north")
+    northButton.classList.add("hidden")
+    const eastButton = document.getElementById("east")
+    eastButton.classList.add("hidden")
+    const southButton = document.getElementById("south")
+    southButton.classList.add("hidden")
+    const westButton = document.getElementById("west")
+    westButton.classList.add("hidden")
+    const inventoryButton = document.getElementById("inventory")
+    inventoryButton.classList.add("hidden")
 }
 
 

@@ -1,4 +1,4 @@
-import { EastButton, NorthButton, ResetButton, SouthButton, WestButton } from "./SceneControl.js"
+import { buttonLabelAssignment } from "./Buttons.js"
 
 let descriptionHTML = `
 <div class="description">Retracing your steps you cross back over the bridge and follow the path
@@ -15,16 +15,7 @@ You aren't sure but it isn't good parenting
 
 export const Start3 = () => {
 
-    const northButton = NorthButton("North")
-    const eastButton = EastButton("East")
-    const southButton = SouthButton("Confront Your Parents")
-    const westButton = WestButton("West")
-    const resetButton = ResetButton()
-
-    const Buttons = `<div class="button-container">
-    <div id='north'class="hidden-button">${northButton}</div>
-    <div class="button-center"><div id='east'class="hidden-button">${eastButton}</div>${resetButton}<div class="hidden-button">${westButton}</div></div>
-    <div id='south'>${southButton}</div></div>`
+    const Buttons = buttonLabelAssignment()
     
 
     const composedHTML = `
@@ -34,6 +25,13 @@ export const Start3 = () => {
     `
 
     container.innerHTML = composedHTML
+
+    const northButton = document.getElementById("north")
+    northButton.classList.add("hidden")
+    const eastButton = document.getElementById("east")
+    eastButton.classList.add("hidden")
+    const westButton = document.getElementById("west")
+    westButton.classList.add("hidden")
 }
 
 

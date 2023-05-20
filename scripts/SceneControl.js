@@ -18,61 +18,7 @@ import { Grandma } from "./Grandma.js"
 import { RunAway } from "./RunAway.js"
 import { Start3 } from "./Start3.js"
 import { Parents } from "./Parents.js"
-
-export const NorthButton = (label) => {
-  if (currentScene === "scene9") {
-    return `<div><button id='north' class="button">${label}</button></div>`
-  }
-  return `<div><button id='north' class="button">${label}</button></div>`
-}
-
-export const EastButton = (label) => {
-  return `<div><button id='east' class="button">${label}</button></div>`
-}
-
-export const SouthButton = (label) => {
-  return `<div><button id='south' class="button">${label}</button></div>`
-}
-
-export const WestButton = (label) => {
-  return `<div><button id='west' class="button">${label}</button></div>`
-}
-
-export const ResetButton = () => {
-  return `<div><button id='reset' class="button">Reset</button></div>`
-}
-
-document.addEventListener("click", (clickEvent) => {
-  const itemClicked = clickEvent.target
-  let customEvent
-
-  switch (itemClicked.id) {
-    case "north":
-      if (currentScene === "scene9") {
-        customEvent = new CustomEvent("warningClick")
-        document.dispatchEvent(customEvent)
-      }
-      customEvent = new CustomEvent("northClick")
-      document.dispatchEvent(customEvent)
-      break;
-    case "east":
-      customEvent = new CustomEvent("eastClick")
-      document.dispatchEvent(customEvent)
-      break;
-    case "south":
-      customEvent = new CustomEvent("southClick")
-      document.dispatchEvent(customEvent)
-      break;
-    case "west":
-      customEvent = new CustomEvent("westClick")
-      document.dispatchEvent(customEvent)
-      break;
-    case "reset":
-      customEvent = new CustomEvent("resetClick")
-      document.dispatchEvent(customEvent)
-      break;
-  }
-})
+import { openInventory } from "./Inventory.js"
 
 
 let currentScene = "initial" // Initial scene
@@ -158,8 +104,8 @@ document.addEventListener("southClick", () => {
 document.addEventListener("westClick", () => {
   switch (currentScene) {
     case "initial":
-      MotherGoat()
       currentScene = "scene5"
+      MotherGoat()
       break;
     case "scene2":
       Start2()
@@ -180,6 +126,10 @@ document.addEventListener("resetClick", () => {
 document.addEventListener("warningClick", () => {
 window.alert("I'm not going back there")
 })
+
+document.addEventListener("inventoryClick", () => {
+  openInventory()
+  })
 
 
 

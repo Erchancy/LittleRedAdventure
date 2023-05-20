@@ -1,4 +1,4 @@
-import { EastButton, NorthButton, ResetButton, SouthButton, WestButton } from "./SceneControl.js"
+import { buttonLabelAssignment } from "./Buttons.js"
 
 export const RunAway = () => {
 
@@ -12,16 +12,7 @@ export const RunAway = () => {
     Made her way to the store you hope</div>
     `
 
-    const northButton = NorthButton("North")
-    const eastButton = EastButton("East")
-    const southButton = SouthButton("South")
-    const westButton = WestButton("West")
-    const resetButton = ResetButton()
-        
-    const Buttons = `<div class="button-container">
-    <div>${northButton}</div>
-    <div class="button-center">${eastButton}${resetButton}<div class="hidden-button">${westButton}</div></div>
-    <div class="hidden-button">${southButton}</div></div>`
+    const Buttons = buttonLabelAssignment()
     
 
     const composedHTML = `
@@ -30,8 +21,12 @@ export const RunAway = () => {
     ${Buttons}
     `
     
-        container.innerHTML = composedHTML
+    container.innerHTML = composedHTML
 
+    const southButton = document.getElementById("south")
+    southButton.classList.add("hidden")
+    const westButton = document.getElementById("west")
+    westButton.classList.add("hidden")
 
     const customEvent = new CustomEvent("sceneChanged")
     document.dispatchEvent(customEvent)

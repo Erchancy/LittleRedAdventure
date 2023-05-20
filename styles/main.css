@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 .title {
@@ -83,7 +84,14 @@
 
 #north {
     align-self: flex-start;
-    margin: auto
+    margin: auto;
+    align-content: space-between;
+}
+
+#top {
+    align-self: flex-start;
+    margin: auto;
+    align-content: space-between;
 }
   
 #east {
@@ -100,8 +108,32 @@
     margin: auto;
 }
 
-.hidden-button {
+#bottom {
+    align-self: flex-end;
+    margin: auto;
+}
+
+.button.hidden {
     opacity: 0;
     pointer-events: none;
 }
+
+.button-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 30%;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    /* Other styles for the overlay */
+    z-index: 9999;
+    justify-content: center;
+  }
   
