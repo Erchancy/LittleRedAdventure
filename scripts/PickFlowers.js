@@ -8,9 +8,9 @@ export const PickFlowers = () => {
     Somehow it relaxes you
     You decide a small break is warrented, this is hard work after all
     You grab a cookie out of your treat basket and sit on the grass
-    Peaking out of the foliage to your right you can see some flower
-    And to your left
-    And to further in too!
+    Peaking out of the foliage to your right you can see some red flowers
+    And to your left yellow flowers
+    And further in too! Blue flowers!
     There are plenty of flowers to choose from</div>
     `
 
