@@ -1,4 +1,4 @@
-import { buttonLabelAssignment } from "./Buttons.js"
+import { buttonLabelAssignment } from "./SceneControl.js"
 
 let descriptionHTML = `
 <div class="description">Retracing your steps you cross back over the bridge and follow the path

@@ -84,14 +84,12 @@
 
 #north {
     align-self: flex-start;
-    margin: auto;
-    align-content: space-between;
+    margin-right: 30px;
 }
 
 #top {
     align-self: flex-start;
     margin: auto;
-    align-content: space-between;
 }
   
 #east {
@@ -105,7 +103,7 @@
 
 #south {
     align-self: flex-end;
-    margin: auto;
+    margin-left: 5px;
 }
 
 #bottom {
@@ -121,19 +119,29 @@
 .button-top {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    width: 370px;
+    justify-content: end;
 }
 
-#overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50%;
-    height: 30%;
-    background-color: rgba(0, 0, 0, 0.5);
-    pointer-events: none;
-    /* Other styles for the overlay */
-    z-index: 9999;
-    justify-content: center;
+.modal {
+    display: none
   }
+
+  .modal.open {
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    z-index: 9999;
+  }
+  
+  .modal-content {
+    width: 100%;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    /* Other styles for the modal content */
+  }
+  
   

@@ -1,4 +1,4 @@
-import { buttonLabelAssignment } from "./Buttons.js"
+import { buttonLabelAssignment } from "./SceneControl.js"
 
 let descriptionHTML = `
 <div class="description">As you walk back down the path you can see your home appear in the horizon

@@ -1,4 +1,4 @@
-import { buttonLabelAssignment } from "./Buttons.js"
+import { buttonLabelAssignment } from "./SceneControl.js"
 
 let descriptionHTML = `
 <div class="description">You are Little Red Riding Hood
@@ -25,7 +25,12 @@ const Buttons = buttonLabelAssignment()
     `
 
     container.innerHTML = composedHTML
+
+    const customEvent = new CustomEvent("sceneChanged")
+    document.dispatchEvent(customEvent)
 }
+
+
 
 
 

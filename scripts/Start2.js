@@ -1,4 +1,4 @@
-import { buttonLabelAssignment } from "./Buttons.js"
+import { buttonLabelAssignment } from "./SceneControl.js"
 
 let sceneCounter = 1
 
