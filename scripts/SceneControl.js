@@ -18,7 +18,7 @@ import { Grandma } from "./Grandma.js"
 import { RunAway } from "./RunAway.js"
 import { Start3 } from "./Start3.js"
 import { Parents } from "./Parents.js"
-import { closeInventory, openInventory } from "./Inventory.js"
+import { closeInventory, openInventory } from "./inventory/Inventory.js"
 
 // Moving all this stuff to its own module breaks the event listeners for some reason. Investigate and fix
 const navigationButtons = (label) => {
@@ -227,3 +227,4 @@ document.addEventListener("inventoryClick", () => {
     openInventory()
   }
   })
+

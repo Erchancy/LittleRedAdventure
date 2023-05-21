@@ -6,8 +6,13 @@ const render = () => {
     Scene
     container.innerHTML += `<div id="overlay" class="modal">
     <div class="modal-content">
-        <h1>Inventory Items</h1>
-        <p></p>
+        <h2>Inventory Items</h2>
+        <section class="modal-item">
+            <p id="basket" class="item-detail">Basket of Goodies</p>
+            <div id="description" class="item-description">
+                <p class="item-description-content">A basket full of food and medicine for grandma</p>
+            </div>
+        </section>
     </div>
 </div>`
 }

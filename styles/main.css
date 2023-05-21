@@ -131,7 +131,6 @@
     width: 40%;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
-    z-index: 9999;
   }
   
   .modal-content {
@@ -141,7 +140,43 @@
     align-items: center;
     display: flex;
     flex-direction: column;
+    z-index: 9998;
     /* Other styles for the modal content */
   }
+
+  .modal-item {
+    display: flex;
+    justify-content: flex-start;
+    align-self: flex-start;
+    margin-left: 15px;
+  }
+
+  .item-detail {
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .item-detail:hover,
+.item-detail:active {
+    color: #FF4742;
+}
+
+.item-description {
+    display: none;
+}
+
+.item-description.open {
+    position: absolute;
+    background-color: white;
+    display: flex;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.item-description-content {
+    position: relative;
+    display: flex;
+    z-index: 9999;
+}
   
   
