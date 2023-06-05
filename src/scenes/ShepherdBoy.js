@@ -37,6 +37,17 @@ export const ShepherdBoy = ({ buttonVisibility }) => {
         </>
     }
 
+    const handleSceneChange = (currentScene) => {
+        switch (currentScene) {
+            case "start":
+                navigate("/")
+                break;
+            case "reset":
+                navigate("/")
+                break;
+        }
+    }
+
     document.addEventListener("click", (clickEvent) => {
         const itemClicked = clickEvent.target
         switch (itemClicked.id) {
@@ -47,13 +58,13 @@ export const ShepherdBoy = ({ buttonVisibility }) => {
 
                 break;
             case "south":
-                navigate("")
+                handleSceneChange("")
                 break;
             case "west":
-                navigate("/")
+                handleSceneChange("start")
                 break;
             case "reset":
-                navigate("/")
+                handleSceneChange("reset")
                 break;
             case "inventory":
 

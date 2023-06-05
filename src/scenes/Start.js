@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom"
 import { Buttons } from "./Buttons"
 import "./Scene.css"
 import { useEffect } from "react"
-import { SceneChange } from "./SceneChange"
 
 export const Start = ({ buttonVisibility }) => {
 
@@ -59,13 +58,12 @@ export const Start = ({ buttonVisibility }) => {
 
         break;
       case "east":
-        debugger
         handleSceneChange("shepherdBoy")
         break;
       case "south":
         handleSceneChange("home")
         break;
-      case "west":
+      case "west": //Clicking the west button causes this to be invoked even when I am not on this screen, possibly because all my scenes are siblings. Needs fixing
         handleSceneChange("motherGoat")
         break;
       case "reset":
