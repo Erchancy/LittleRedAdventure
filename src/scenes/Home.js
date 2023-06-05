@@ -1,14 +1,22 @@
 import { useNavigate } from "react-router-dom"
 import { Buttons } from "./Buttons"
 import "./Scene.css"
+import { useEffect } from "react"
 
 
-export const Home = () => {
+export const Home = ({ buttonVisibility }) => {
 
-    const scene = localStorage.getItem("scene")
-    const currentScene = JSON.parse(scene)
-    currentScene.currentScene = "badEnd"
-    localStorage.setItem("scene", JSON.stringify(currentScene))
+    useEffect(
+        () => {
+          buttonVisibility.north = "invisible"
+          buttonVisibility.east = "invisible"
+          buttonVisibility.south = "invisible"
+          buttonVisibility.west = "invisible"
+          buttonVisibility.inventory = "invisible"
+          localStorage.setItem("buttons", JSON.stringify(buttonVisibility))
+        },
+        []
+      )
 
     const navigate = useNavigate()
 
@@ -34,6 +42,6 @@ export const Home = () => {
 
     return <>
         {descriptionHTML()}
-        {Buttons()}
+        {Buttons(buttonVisibility)}
     </>
 }

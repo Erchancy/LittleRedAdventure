@@ -1,13 +1,21 @@
 import { useNavigate } from "react-router-dom"
 import { Buttons } from "./Buttons"
 import "./Scene.css"
+import { useEffect } from "react"
 
-export const ShepherdBoy = () => {
+export const ShepherdBoy = ({ buttonVisibility }) => {
 
-    const scene = localStorage.getItem("scene")
-    const currentScene = JSON.parse(scene)
-    currentScene.currentScene = "noEast"
-    localStorage.setItem("scene", JSON.stringify(currentScene))
+    useEffect(
+        () => {
+            buttonVisibility.north = "invisible"
+            buttonVisibility.east = "invisible"
+            buttonVisibility.south = ""
+            buttonVisibility.west = ""
+            buttonVisibility.inventory = ""
+            localStorage.setItem("buttons", JSON.stringify(buttonVisibility))
+        },
+        []
+    )
 
     const navigate = useNavigate()
 
@@ -42,7 +50,7 @@ export const ShepherdBoy = () => {
                 navigate("")
                 break;
             case "west":
-
+                navigate("/")
                 break;
             case "reset":
                 navigate("/")
@@ -55,6 +63,6 @@ export const ShepherdBoy = () => {
 
     return <>
         {descriptionHTML()}
-        {Buttons()}
+        {Buttons(buttonVisibility)}
     </>
 }

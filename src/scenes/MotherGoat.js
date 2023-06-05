@@ -1,13 +1,22 @@
 import { useNavigate } from "react-router-dom"
 import { Buttons } from "./Buttons"
 import "./Scene.css"
+import { useEffect } from "react"
 
-export const MotherGoat = () => {
+export const MotherGoat = ({ buttonVisibility }) => {
 
-    const scene = localStorage.getItem("scene")
-    const currentScene = JSON.parse(scene)
-    currentScene.currentScene = "noWest"
-    localStorage.setItem("scene", JSON.stringify(currentScene))
+debugger
+  useEffect(
+    () => {
+      buttonVisibility.north = ""
+      buttonVisibility.east = ""
+      buttonVisibility.south = ""
+      buttonVisibility.west = "invisible"
+      buttonVisibility.inventory = ""
+      localStorage.setItem("buttons", JSON.stringify(buttonVisibility))
+    },
+    []
+  )
 
     const navigate = useNavigate()
 
@@ -24,6 +33,17 @@ export const MotherGoat = () => {
         </>
     }
 
+    const handleSceneChange = (currentScene) => {
+      switch (currentScene) {
+        case "start":
+          navigate("/")
+          break;
+        case "reset":
+          navigate("/")
+          break;
+      }
+    }
+
     document.addEventListener("click", (clickEvent) => {
         const itemClicked = clickEvent.target
         switch (itemClicked.id) {
@@ -31,16 +51,16 @@ export const MotherGoat = () => {
 
             break;
           case "east":
-
+            handleSceneChange("start")
             break;
           case "south":
-            navigate("")
+            handleSceneChange("")
             break;
           case "west":
 
             break;
           case "reset":
-            navigate("/")
+            handleSceneChange("reset")
             break;
           case "inventory":
 
@@ -50,6 +70,6 @@ export const MotherGoat = () => {
 
     return <>
         {descriptionHTML()}
-        {Buttons()}
+        {Buttons(buttonVisibility)}
     </>
 }

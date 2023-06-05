@@ -1,62 +1,34 @@
 import { useEffect } from "react";
 import "./Buttons.css"
-export const Buttons = () => {
-
-    const scene = localStorage.getItem("scene")
-    const currentScene = JSON.parse(scene)
+export const Buttons = (buttons) => {
 
     const buttonDisplay = () => {
-        switch (currentScene.currentScene) {
-            case "badEnd":
-                const badEndButtons = () => {
-                    const northButton = document.getElementById("north");
-                    northButton.classList.add("hidden");
-                    const eastButton = document.getElementById("east");
-                    eastButton.classList.add("hidden");
-                    const southButton = document.getElementById("south");
-                    southButton.classList.add("hidden");
-                    const westButton = document.getElementById("west");
-                    westButton.classList.add("hidden");
-                    const inventoryButton = document.getElementById("inventory");
-                    inventoryButton.classList.add("hidden");
-                }
-                badEndButtons()
-                break;
-            case "noWest":
-                const hideWest = () => {
-                    const westButton = document.getElementById("west");
-                    westButton.classList.add("hidden");
-                }
-                hideWest()
-                break;
-            case "noEast":
-                const hideEast = () => {
-                    const eastButton = document.getElementById("east");
-                    eastButton.classList.add("hidden");
-                }
-                hideEast()
-                break;
-            case "noNorth":
-                const hideNorth = () => {
-                    const NorthButton = document.getElementById("north");
-                    NorthButton.classList.add("hidden");
-                }
-                hideNorth()
-                break;
-            case "noSouth":
-                const hideSouth = () => {
-                    const SouthButton = document.getElementById("south");
-                    SouthButton.classList.add("hidden");
-                }
-                hideSouth()
-                break;
+        if (buttons.north === "invisible") {
+            const northButton = document.getElementById("north");
+            northButton.classList.add("hidden");
+        }
+        if (buttons.east === "invisible") {
+            const eastButton = document.getElementById("east");
+            eastButton.classList.add("hidden");
+        }
+        if (buttons.south === "invisible") {
+            const southButton = document.getElementById("south");
+            southButton.classList.add("hidden");
+        }
+        if (buttons.west === "invisible") {
+            const westButton = document.getElementById("west");
+            westButton.classList.add("hidden");
+        }
+        if (buttons.inventory === "invisible") {
+            const inventoryButton = document.getElementById("inventory");
+            inventoryButton.classList.add("hidden");
         }
     }
 
     useEffect(() => {
         buttonDisplay()
     },
-        [currentScene])
+        [buttons])
 
     return <>
         <section className="button-container">
